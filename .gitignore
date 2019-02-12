@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/.vs/SauceLabs.IntegrationTests/v16
+/src/packages
+/src/SauceLabs.IntegrationTests/bin/Debug
+/src/SauceLabs.IntegrationTests/obj/Debug
