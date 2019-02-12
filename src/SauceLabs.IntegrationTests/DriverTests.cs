@@ -25,6 +25,8 @@
 
             using (var driver = new RemoteWebDriver(RemoteAddress, options.ToCapabilities(), TimeSpan.FromSeconds(60)))
             {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                driver.Manage().Timeouts().PageLoad = TimeSpan.FromMinutes(5);
                 driver.Navigate().GoToUrl("https://login.live.com");
             }
         }
