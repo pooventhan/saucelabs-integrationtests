@@ -1,6 +1,7 @@
 ﻿namespace SauceLabs.IntegrationTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OpenQA.Selenium.Chrome;
     using OpenQA.Selenium.Firefox;
     using OpenQA.Selenium.Remote;
     using OpenQA.Selenium.Safari;
@@ -13,6 +14,19 @@
 
         private string sauceUserName = Environment.GetEnvironmentVariable("sauceUserName");
         private string sauceAccessKey = Environment.GetEnvironmentVariable("sauceAccessKey");
+
+        [TestMethod]
+        public void ChromeDriverTest()
+        {
+            var options = new ChromeOptions();
+            options.AddAdditionalCapability("username", sauceUserName, true);
+            options.AddAdditionalCapability("accessKey", sauceAccessKey, true);
+
+            using (var driver = new RemoteWebDriver(RemoteAddress, options.ToCapabilities(), TimeSpan.FromSeconds(60)))
+            {
+                driver.Navigate().GoToUrl("https://login.live.com");
+            }
+        }
 
         [TestMethod]
         public void FirefoxDriverTest()
