@@ -10,7 +10,7 @@
     [TestClass]
     public class DriverTests
     {
-        private static readonly Uri RemoteAddress = new Uri("http://ondemand.saucelabs.com:80/wd/hub");
+        private static readonly Uri RemoteAddress = new Uri("https://ondemand.saucelabs.com/wd/hub");
 
         private string sauceUserName = Environment.GetEnvironmentVariable("sauceUserName");
         private string sauceAccessKey = Environment.GetEnvironmentVariable("sauceAccessKey");
