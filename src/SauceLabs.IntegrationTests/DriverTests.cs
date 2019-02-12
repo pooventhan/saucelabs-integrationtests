@@ -1,4 +1,4 @@
-﻿namespace SeleniumDriver
+﻿namespace SauceLabs.IntegrationTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using OpenQA.Selenium.Firefox;

@@ -1,4 +1,4 @@
-﻿namespace SeleniumDriver
+﻿namespace SauceLabs.IntegrationTests
 {
     using OpenQA.Selenium;
     using System.Collections.Generic;
