@@ -21,6 +21,7 @@
             var options = new ChromeOptions();
             options.AddAdditionalCapability("username", sauceUserName, true);
             options.AddAdditionalCapability("accessKey", sauceAccessKey, true);
+            options.AddAdditionalCapability(CapabilityType.Platform, "Windows 10", true);
 
             using (var driver = new RemoteWebDriver(RemoteAddress, options.ToCapabilities(), TimeSpan.FromSeconds(60)))
             {
