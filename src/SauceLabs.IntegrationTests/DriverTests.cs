@@ -14,8 +14,8 @@
 
         private static readonly TimeSpan CommandTimeout = TimeSpan.FromMinutes(5);
 
-        private string sauceUserName = Environment.GetEnvironmentVariable("sauceUserName");
-        private string sauceAccessKey = Environment.GetEnvironmentVariable("sauceAccessKey");
+        private string sauceUserName = Environment.GetEnvironmentVariable("SAUCE_USERNAME");
+        private string sauceAccessKey = Environment.GetEnvironmentVariable("SAUCE_ACCESS_KEY");
 
         [TestMethod]
         public void ChromeDriverTest()
@@ -40,6 +40,7 @@
             var options = new FirefoxOptions();
             options.AddAdditionalCapability("username", sauceUserName, true);
             options.AddAdditionalCapability("accessKey", sauceAccessKey, true);
+            options.AddAdditionalCapability(CapabilityType.Platform, "Windows", true);
 
             using (var driver = new RemoteWebDriver(RemoteAddress, options.ToCapabilities(), CommandTimeout))
             {
